@@ -3,7 +3,7 @@
  * AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-
+#error "This file should not compile 1111111111111111"
 #include "MctpRequester.hpp"
 
 #include <linux/mctp.h>
