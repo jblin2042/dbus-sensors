@@ -141,7 +141,7 @@ void Requester::handleSendMsgCompletion(
     });
 
     mctpSocket.async_receive_from(
-        boost::asio::mutable_buffer(respMsg), recvEndPoint,
+        boost::asio::mutable_buffer(respMsg.data(), respMsg.size()), recvEndPoint,
         std::bind_front(&Requester::processRecvMsg, this, reqMsg, respMsg));
 }
 
@@ -167,7 +167,7 @@ void Requester::sendRecvMsg(uint8_t eid, const std::span<const uint8_t> reqMsg,
     sendEndPoint = {&addr, sizeof(addr)};
 
     mctpSocket.async_send_to(
-        boost::asio::const_buffer(reqMsg), sendEndPoint,
+        boost::asio::const_buffer(reqMsg.data(), reqMsg.size()), sendEndPoint,
         std::bind_front(&Requester::handleSendMsgCompletion, this, eid, reqMsg,
                         respMsg));
 }
