@@ -155,7 +155,7 @@ void Requester::sendRecvMsg(uint8_t eid, const std::span<const uint8_t> reqMsg,
         callback(EPROTO);
         return;
     }
-1111111111111111111111111111
+
     completionCallbacks[eid] = std::move(callback);
 
     struct sockaddr_mctp addr{};
