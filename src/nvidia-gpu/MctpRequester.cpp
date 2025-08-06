@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#error "This file should not compile"
 #include "MctpRequester.hpp"
 
 #include <linux/mctp.h>
@@ -156,7 +155,7 @@ void Requester::sendRecvMsg(uint8_t eid, const std::span<const uint8_t> reqMsg,
         callback(EPROTO);
         return;
     }
-11111111111111111111
+
     completionCallbacks[eid] = std::move(callback);
 
     struct sockaddr_mctp addr{};
