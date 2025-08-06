@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#error "This file should not compile"
 #include "MctpRequester.hpp"
 
 #include <linux/mctp.h>
